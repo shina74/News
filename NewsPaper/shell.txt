@@ -35,5 +35,12 @@ com2.like()
 com3.like()
 auf1.update_rating()
 auf2.update_rating()
-Author.objects.all().order_by('rating').first().rating
-Author.objects.all().order_by('rating').first().user
+a=str(Author.objects.all().order_by('-rating').first().rating)
+b=str(Author.objects.all().order_by('-rating').first().user)
+b+' '+a
+a=str(Post.objects.all().order_by('-rating').first().author.user)
+b=str(Post.objects.all().order_by('-rating').first().time_create)
+c=str(Post.objects.all().order_by('-rating').first().rating)
+d=str(Post.objects.all().order_by('-rating').first().head)
+e=Post.objects.all().order_by('-rating').first().preview()
+a+' '+b+' '+c+' '+d+' '+e
